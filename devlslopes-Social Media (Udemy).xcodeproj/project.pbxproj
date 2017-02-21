@@ -13,6 +13,9 @@
 		1EEE00301E5BC4670090F9ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EEE002F1E5BC4670090F9ED /* Assets.xcassets */; };
 		1EEE00331E5BC4670090F9ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EEE00311E5BC4670090F9ED /* LaunchScreen.storyboard */; };
 		1EEE003E1E5BC4680090F9ED /* devlslopes_Social_Media__Udemy_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE003D1E5BC4680090F9ED /* devlslopes_Social_Media__Udemy_Tests.swift */; };
+		1EEE00491E5BC5510090F9ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EEE00481E5BC5510090F9ED /* GoogleService-Info.plist */; };
+		336828047C35F8E582B28772 /* Pods_devlslopes_Social_Media__Udemy_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021995CA48D133555CA4A37D /* Pods_devlslopes_Social_Media__Udemy_Tests.framework */; };
+		52F854159C607AC6A2B5F63F /* Pods_devlslopes_Social_Media__Udemy_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBEA988B2296D1772ED3A622 /* Pods_devlslopes_Social_Media__Udemy_.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		021995CA48D133555CA4A37D /* Pods_devlslopes_Social_Media__Udemy_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_devlslopes_Social_Media__Udemy_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EEE00251E5BC4670090F9ED /* devlslopes-Social Media (Udemy).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "devlslopes-Social Media (Udemy).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EEE00281E5BC4670090F9ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EEE002A1E5BC4670090F9ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +40,12 @@
 		1EEE00391E5BC4680090F9ED /* devlslopes-Social Media (Udemy)Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "devlslopes-Social Media (Udemy)Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EEE003D1E5BC4680090F9ED /* devlslopes_Social_Media__Udemy_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = devlslopes_Social_Media__Udemy_Tests.swift; sourceTree = "<group>"; };
 		1EEE003F1E5BC4680090F9ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EEE00481E5BC5510090F9ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2665DB0A09F9C2EC7E96F835 /* Pods-devlslopes-Social Media (Udemy).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devlslopes-Social Media (Udemy).release.xcconfig"; path = "Pods/Target Support Files/Pods-devlslopes-Social Media (Udemy)/Pods-devlslopes-Social Media (Udemy).release.xcconfig"; sourceTree = "<group>"; };
+		40A95660360FB3BB1FEB13ED /* Pods-devlslopes-Social Media (Udemy)Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devlslopes-Social Media (Udemy)Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-devlslopes-Social Media (Udemy)Tests/Pods-devlslopes-Social Media (Udemy)Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		55B0916D03B925A45440F0C6 /* Pods-devlslopes-Social Media (Udemy).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devlslopes-Social Media (Udemy).debug.xcconfig"; path = "Pods/Target Support Files/Pods-devlslopes-Social Media (Udemy)/Pods-devlslopes-Social Media (Udemy).debug.xcconfig"; sourceTree = "<group>"; };
+		631981BE74D76B2B625086F1 /* Pods-devlslopes-Social Media (Udemy)Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devlslopes-Social Media (Udemy)Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-devlslopes-Social Media (Udemy)Tests/Pods-devlslopes-Social Media (Udemy)Tests.release.xcconfig"; sourceTree = "<group>"; };
+		FBEA988B2296D1772ED3A622 /* Pods_devlslopes_Social_Media__Udemy_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_devlslopes_Social_Media__Udemy_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52F854159C607AC6A2B5F63F /* Pods_devlslopes_Social_Media__Udemy_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				336828047C35F8E582B28772 /* Pods_devlslopes_Social_Media__Udemy_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +74,8 @@
 				1EEE00271E5BC4670090F9ED /* devlslopes-Social Media (Udemy) */,
 				1EEE003C1E5BC4680090F9ED /* devlslopes-Social Media (Udemy)Tests */,
 				1EEE00261E5BC4670090F9ED /* Products */,
+				62D3F95BA703937552E9B4E3 /* Pods */,
+				7C9ADC0CA79B77573E8B6F8D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,9 +91,12 @@
 		1EEE00271E5BC4670090F9ED /* devlslopes-Social Media (Udemy) */ = {
 			isa = PBXGroup;
 			children = (
+				1EEE004A1E5BC9700090F9ED /* Model */,
+				1EEE004C1E5BC97A0090F9ED /* Controller */,
+				1EEE004B1E5BC9760090F9ED /* View */,
 				1EEE00281E5BC4670090F9ED /* AppDelegate.swift */,
-				1EEE002A1E5BC4670090F9ED /* ViewController.swift */,
 				1EEE002C1E5BC4670090F9ED /* Main.storyboard */,
+				1EEE00481E5BC5510090F9ED /* GoogleService-Info.plist */,
 				1EEE002F1E5BC4670090F9ED /* Assets.xcassets */,
 				1EEE00311E5BC4670090F9ED /* LaunchScreen.storyboard */,
 				1EEE00341E5BC4670090F9ED /* Info.plist */,
@@ -96,6 +113,48 @@
 			path = "devlslopes-Social Media (Udemy)Tests";
 			sourceTree = "<group>";
 		};
+		1EEE004A1E5BC9700090F9ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1EEE004B1E5BC9760090F9ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1EEE004C1E5BC97A0090F9ED /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1EEE002A1E5BC4670090F9ED /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		62D3F95BA703937552E9B4E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				55B0916D03B925A45440F0C6 /* Pods-devlslopes-Social Media (Udemy).debug.xcconfig */,
+				2665DB0A09F9C2EC7E96F835 /* Pods-devlslopes-Social Media (Udemy).release.xcconfig */,
+				40A95660360FB3BB1FEB13ED /* Pods-devlslopes-Social Media (Udemy)Tests.debug.xcconfig */,
+				631981BE74D76B2B625086F1 /* Pods-devlslopes-Social Media (Udemy)Tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7C9ADC0CA79B77573E8B6F8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FBEA988B2296D1772ED3A622 /* Pods_devlslopes_Social_Media__Udemy_.framework */,
+				021995CA48D133555CA4A37D /* Pods_devlslopes_Social_Media__Udemy_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +162,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1EEE00421E5BC4680090F9ED /* Build configuration list for PBXNativeTarget "devlslopes-Social Media (Udemy)" */;
 			buildPhases = (
+				46EDB9A74EA77D1E027A483E /* [CP] Check Pods Manifest.lock */,
 				1EEE00211E5BC4670090F9ED /* Sources */,
 				1EEE00221E5BC4670090F9ED /* Frameworks */,
 				1EEE00231E5BC4670090F9ED /* Resources */,
+				1F6582523E8FD158C6D9ECB2 /* [CP] Embed Pods Frameworks */,
+				0B7917491B23AFF083BB71B9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,9 +182,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1EEE00451E5BC4680090F9ED /* Build configuration list for PBXNativeTarget "devlslopes-Social Media (Udemy)Tests" */;
 			buildPhases = (
+				9258B6558879D3E04BD92C4E /* [CP] Check Pods Manifest.lock */,
 				1EEE00351E5BC4680090F9ED /* Sources */,
 				1EEE00361E5BC4680090F9ED /* Frameworks */,
 				1EEE00371E5BC4680090F9ED /* Resources */,
+				A6213B1E38136AB574FB80DD /* [CP] Embed Pods Frameworks */,
+				8D601B40E3CF3E1563B221B4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -183,6 +248,7 @@
 			files = (
 				1EEE00331E5BC4670090F9ED /* LaunchScreen.storyboard in Resources */,
 				1EEE00301E5BC4670090F9ED /* Assets.xcassets in Resources */,
+				1EEE00491E5BC5510090F9ED /* GoogleService-Info.plist in Resources */,
 				1EEE002E1E5BC4670090F9ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +261,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B7917491B23AFF083BB71B9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-devlslopes-Social Media (Udemy)/Pods-devlslopes-Social Media (Udemy)-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1F6582523E8FD158C6D9ECB2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-devlslopes-Social Media (Udemy)/Pods-devlslopes-Social Media (Udemy)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46EDB9A74EA77D1E027A483E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8D601B40E3CF3E1563B221B4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-devlslopes-Social Media (Udemy)Tests/Pods-devlslopes-Social Media (Udemy)Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9258B6558879D3E04BD92C4E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A6213B1E38136AB574FB80DD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-devlslopes-Social Media (Udemy)Tests/Pods-devlslopes-Social Media (Udemy)Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1EEE00211E5BC4670090F9ED /* Sources */ = {
@@ -339,6 +498,7 @@
 		};
 		1EEE00431E5BC4680090F9ED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55B0916D03B925A45440F0C6 /* Pods-devlslopes-Social Media (Udemy).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5PD448JSVP;
@@ -352,6 +512,7 @@
 		};
 		1EEE00441E5BC4680090F9ED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2665DB0A09F9C2EC7E96F835 /* Pods-devlslopes-Social Media (Udemy).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5PD448JSVP;
@@ -365,6 +526,7 @@
 		};
 		1EEE00461E5BC4680090F9ED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40A95660360FB3BB1FEB13ED /* Pods-devlslopes-Social Media (Udemy)Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -380,6 +542,7 @@
 		};
 		1EEE00471E5BC4680090F9ED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 631981BE74D76B2B625086F1 /* Pods-devlslopes-Social Media (Udemy)Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -412,6 +575,7 @@
 				1EEE00441E5BC4680090F9ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1EEE00451E5BC4680090F9ED /* Build configuration list for PBXNativeTarget "devlslopes-Social Media (Udemy)Tests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +584,7 @@
 				1EEE00471E5BC4680090F9ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

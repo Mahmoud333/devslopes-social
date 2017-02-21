@@ -4,11 +4,11 @@
 //
 //  Created by Mahmoud Hamad on 2/21/17.
 //  Copyright © 2017 Mahmoud SMGL. All rights reserved.
-//
+// Was the ViewController
 
 import UIKit
 
-class ViewController: UIViewController {
+class SignInVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
