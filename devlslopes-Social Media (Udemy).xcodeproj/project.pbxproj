@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E7423411E5D57CD00CD47A7 /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7423401E5D57CD00CD47A7 /* FancyView.swift */; };
+		1E7423441E5D58B800CD47A7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7423431E5D58B800CD47A7 /* Constants.swift */; };
+		1E7423461E5D636F00CD47A7 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7423451E5D636F00CD47A7 /* RoundButton.swift */; };
+		1E7423481E5D671200CD47A7 /* DropShadow-Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7423471E5D671200CD47A7 /* DropShadow-Protocol.swift */; };
+		1E74234A1E5D6B5F00CD47A7 /* FancyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7423491E5D6B5F00CD47A7 /* FancyTextField.swift */; };
+		1E74234C1E5D6E1D00CD47A7 /* FuncyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E74234B1E5D6E1D00CD47A7 /* FuncyButton.swift */; };
+		1E74234E1E5D6E5A00CD47A7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E74234D1E5D6E5A00CD47A7 /* Extensions.swift */; };
 		1EEE00291E5BC4670090F9ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE00281E5BC4670090F9ED /* AppDelegate.swift */; };
 		1EEE002B1E5BC4670090F9ED /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE002A1E5BC4670090F9ED /* SignInVC.swift */; };
 		1EEE002E1E5BC4670090F9ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EEE002C1E5BC4670090F9ED /* Main.storyboard */; };
@@ -30,6 +37,13 @@
 
 /* Begin PBXFileReference section */
 		021995CA48D133555CA4A37D /* Pods_devlslopes_Social_Media__Udemy_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_devlslopes_Social_Media__Udemy_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E7423401E5D57CD00CD47A7 /* FancyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
+		1E7423431E5D58B800CD47A7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1E7423451E5D636F00CD47A7 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		1E7423471E5D671200CD47A7 /* DropShadow-Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DropShadow-Protocol.swift"; sourceTree = "<group>"; };
+		1E7423491E5D6B5F00CD47A7 /* FancyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyTextField.swift; sourceTree = "<group>"; };
+		1E74234B1E5D6E1D00CD47A7 /* FuncyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuncyButton.swift; sourceTree = "<group>"; };
+		1E74234D1E5D6E5A00CD47A7 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1EEE00251E5BC4670090F9ED /* devlslopes-Social Media (Udemy).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "devlslopes-Social Media (Udemy).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EEE00281E5BC4670090F9ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EEE002A1E5BC4670090F9ED /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -68,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E7423421E5D589300CD47A7 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				1E7423431E5D58B800CD47A7 /* Constants.swift */,
+				1E74234D1E5D6E5A00CD47A7 /* Extensions.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		1EEE001C1E5BC4660090F9ED = {
 			isa = PBXGroup;
 			children = (
@@ -91,9 +114,11 @@
 		1EEE00271E5BC4670090F9ED /* devlslopes-Social Media (Udemy) */ = {
 			isa = PBXGroup;
 			children = (
+				1E7423421E5D589300CD47A7 /* Util */,
 				1EEE004A1E5BC9700090F9ED /* Model */,
 				1EEE004C1E5BC97A0090F9ED /* Controller */,
 				1EEE004B1E5BC9760090F9ED /* View */,
+				1E7423471E5D671200CD47A7 /* DropShadow-Protocol.swift */,
 				1EEE00281E5BC4670090F9ED /* AppDelegate.swift */,
 				1EEE002C1E5BC4670090F9ED /* Main.storyboard */,
 				1EEE00481E5BC5510090F9ED /* GoogleService-Info.plist */,
@@ -123,6 +148,10 @@
 		1EEE004B1E5BC9760090F9ED /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1E7423401E5D57CD00CD47A7 /* FancyView.swift */,
+				1E7423451E5D636F00CD47A7 /* RoundButton.swift */,
+				1E7423491E5D6B5F00CD47A7 /* FancyTextField.swift */,
+				1E74234B1E5D6E1D00CD47A7 /* FuncyButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -360,8 +389,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E7423481E5D671200CD47A7 /* DropShadow-Protocol.swift in Sources */,
+				1E74234E1E5D6E5A00CD47A7 /* Extensions.swift in Sources */,
 				1EEE002B1E5BC4670090F9ED /* SignInVC.swift in Sources */,
+				1E7423461E5D636F00CD47A7 /* RoundButton.swift in Sources */,
 				1EEE00291E5BC4670090F9ED /* AppDelegate.swift in Sources */,
+				1E74234A1E5D6B5F00CD47A7 /* FancyTextField.swift in Sources */,
+				1E74234C1E5D6E1D00CD47A7 /* FuncyButton.swift in Sources */,
+				1E7423411E5D57CD00CD47A7 /* FancyView.swift in Sources */,
+				1E7423441E5D58B800CD47A7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
