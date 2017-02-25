@@ -10,6 +10,7 @@ target 'devlslopes-Social Media (Udemy)' do
   pod 'Firebase/Auth' #handle authentication faceboook, email and password
   pod 'Firebase/Database'
   pod 'Firebase/Storage' #for images
+  pod 'FBSDKLoginKit'
 
 
 

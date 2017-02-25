@@ -78,7 +78,11 @@
                                 <state key="normal" image="f"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="CompletleyCircleIt" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="addShadow" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="facebookBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f8F-iq-GK1"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="TSa-dB-2vo">
                                 <rect key="frame" x="72.5" y="410" width="230" height="110"/>
@@ -99,7 +103,7 @@
                                                 <rect key="frame" x="0.0" y="35" width="230" height="25"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -118,7 +122,11 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
                                                 <real key="value" value="12"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="addShadow" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signinBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eCO-Au-Lkg"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -140,6 +148,10 @@
                             <constraint firstItem="l4s-lW-5o6" firstAttribute="top" secondItem="qts-1y-rGC" secondAttribute="bottom" constant="36" id="w2D-ru-umB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTxtField" destination="C2H-qk-3ko" id="NZC-y9-hql"/>
+                        <outlet property="passTxtField" destination="gpF-sO-dZV" id="TMw-ZR-gEZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

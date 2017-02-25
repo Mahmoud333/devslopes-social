@@ -82,11 +82,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E53AE831E5EBCD7003E70BB /* Things not using */ = {
+			isa = PBXGroup;
+			children = (
+				1E74234D1E5D6E5A00CD47A7 /* Extensions.swift */,
+				1E7423451E5D636F00CD47A7 /* RoundButton.swift */,
+			);
+			name = "Things not using";
+			sourceTree = "<group>";
+		};
 		1E7423421E5D589300CD47A7 /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				1E7423431E5D58B800CD47A7 /* Constants.swift */,
-				1E74234D1E5D6E5A00CD47A7 /* Extensions.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -114,6 +122,7 @@
 		1EEE00271E5BC4670090F9ED /* devlslopes-Social Media (Udemy) */ = {
 			isa = PBXGroup;
 			children = (
+				1E53AE831E5EBCD7003E70BB /* Things not using */,
 				1E7423421E5D589300CD47A7 /* Util */,
 				1EEE004A1E5BC9700090F9ED /* Model */,
 				1EEE004C1E5BC97A0090F9ED /* Controller */,
@@ -149,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				1E7423401E5D57CD00CD47A7 /* FancyView.swift */,
-				1E7423451E5D636F00CD47A7 /* RoundButton.swift */,
 				1E7423491E5D6B5F00CD47A7 /* FancyTextField.swift */,
 				1E74234B1E5D6E1D00CD47A7 /* FuncyButton.swift */,
 			);
@@ -241,6 +249,7 @@
 					1EEE00241E5BC4670090F9ED = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 5PD448JSVP;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					1EEE00381E5BC4680090F9ED = {
@@ -537,11 +546,17 @@
 			baseConfigurationReference = 55B0916D03B925A45440F0C6 /* Pods-devlslopes-Social Media (Udemy).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 5PD448JSVP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "devlslopes-Social Media (Udemy)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Mahmoud-SMGL.devlslopes-Social-Media--Udemy-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -551,7 +566,12 @@
 			baseConfigurationReference = 2665DB0A09F9C2EC7E96F835 /* Pods-devlslopes-Social Media (Udemy).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 5PD448JSVP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "devlslopes-Social Media (Udemy)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Mahmoud-SMGL.devlslopes-Social-Media--Udemy-";
