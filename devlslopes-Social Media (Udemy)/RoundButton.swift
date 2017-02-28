@@ -19,7 +19,7 @@ class RoundButton: UIButton, DropShadow {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.addDropShadow()
+        self.addDropShadowSMGL()
         imageView?.contentMode = .scaleAspectFit
     }
 

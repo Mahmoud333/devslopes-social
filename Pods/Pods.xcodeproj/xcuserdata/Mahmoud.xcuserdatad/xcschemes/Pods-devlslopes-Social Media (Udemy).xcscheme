@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B6024FC2D55B895BB16A1CA40670BF29"
+               BlueprintIdentifier = "2E827D27E67D6C4B30C98892ABA3264E"
                BuildableName = "Pods_devlslopes_Social_Media__Udemy_.framework"
                BlueprintName = "Pods-devlslopes-Social Media (Udemy)"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B6024FC2D55B895BB16A1CA40670BF29"
+            BlueprintIdentifier = "2E827D27E67D6C4B30C98892ABA3264E"
             BuildableName = "Pods_devlslopes_Social_Media__Udemy_.framework"
             BlueprintName = "Pods-devlslopes-Social Media (Udemy)"
             ReferencedContainer = "container:Pods.xcodeproj">

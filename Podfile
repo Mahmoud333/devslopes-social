@@ -11,7 +11,10 @@ target 'devlslopes-Social Media (Udemy)' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage' #for images
   pod 'FBSDKLoginKit'
+  pod 'SwiftKeychainWrapper'
 
+  pod 'Fabric'
+  pod 'TwitterKit'
 
 
   target 'devlslopes-Social Media (Udemy)Tests' do

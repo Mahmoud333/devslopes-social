@@ -15,8 +15,10 @@ class FuncyButton: UIButton, DropShadow {
         didSet {
             if CompletleyCircleIt {
                 layer.cornerRadius = self.bounds.width/2
+                //layer.masksToBounds = true
             } else {
                 layer.cornerRadius = 0.0
+                //layer.masksToBounds = false
             }
         }
     }
@@ -29,7 +31,9 @@ class FuncyButton: UIButton, DropShadow {
     
     @IBInspectable var addShadow: Bool = false { //Shadow It
         didSet {
-            addDropShadow()
+            if addShadow {
+                addDropShadowSMGL()
+            }
         }
     }
     

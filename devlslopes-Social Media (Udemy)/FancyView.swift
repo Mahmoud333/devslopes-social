@@ -8,12 +8,27 @@
 
 import UIKit
 
+@IBDesignable
 class FancyView: UIView ,DropShadow{
 
+    @IBInspectable var CornerRadius: CGFloat = 0 { //Choose Corner Radius
+        didSet {
+            layer.cornerRadius = CornerRadius
+        }
+    }
+    
+    @IBInspectable var addShadow: Bool = false { //Shadow It
+        didSet {
+            if addShadow {
+                addDropShadowSMGL()
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.addDropShadow()
+        self.addDropShadowSMGL()
         
     }
 

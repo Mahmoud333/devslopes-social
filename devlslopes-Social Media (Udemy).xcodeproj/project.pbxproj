@@ -14,6 +14,8 @@
 		1E74234A1E5D6B5F00CD47A7 /* FancyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7423491E5D6B5F00CD47A7 /* FancyTextField.swift */; };
 		1E74234C1E5D6E1D00CD47A7 /* FuncyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E74234B1E5D6E1D00CD47A7 /* FuncyButton.swift */; };
 		1E74234E1E5D6E5A00CD47A7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E74234D1E5D6E5A00CD47A7 /* Extensions.swift */; };
+		1EC427FC1E65312F0069BEFD /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC427FB1E65312F0069BEFD /* CircleImageView.swift */; };
+		1EC427FE1E654A8F0069BEFD /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC427FD1E654A8F0069BEFD /* PostCell.swift */; };
 		1EEE00291E5BC4670090F9ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE00281E5BC4670090F9ED /* AppDelegate.swift */; };
 		1EEE002B1E5BC4670090F9ED /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE002A1E5BC4670090F9ED /* SignInVC.swift */; };
 		1EEE002E1E5BC4670090F9ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EEE002C1E5BC4670090F9ED /* Main.storyboard */; };
@@ -21,6 +23,7 @@
 		1EEE00331E5BC4670090F9ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EEE00311E5BC4670090F9ED /* LaunchScreen.storyboard */; };
 		1EEE003E1E5BC4680090F9ED /* devlslopes_Social_Media__Udemy_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE003D1E5BC4680090F9ED /* devlslopes_Social_Media__Udemy_Tests.swift */; };
 		1EEE00491E5BC5510090F9ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EEE00481E5BC5510090F9ED /* GoogleService-Info.plist */; };
+		1EF29B1A1E62DFA9006DB93D /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF29B191E62DFA9006DB93D /* FeedVC.swift */; };
 		336828047C35F8E582B28772 /* Pods_devlslopes_Social_Media__Udemy_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021995CA48D133555CA4A37D /* Pods_devlslopes_Social_Media__Udemy_Tests.framework */; };
 		52F854159C607AC6A2B5F63F /* Pods_devlslopes_Social_Media__Udemy_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBEA988B2296D1772ED3A622 /* Pods_devlslopes_Social_Media__Udemy_.framework */; };
 /* End PBXBuildFile section */
@@ -44,6 +47,8 @@
 		1E7423491E5D6B5F00CD47A7 /* FancyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyTextField.swift; sourceTree = "<group>"; };
 		1E74234B1E5D6E1D00CD47A7 /* FuncyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuncyButton.swift; sourceTree = "<group>"; };
 		1E74234D1E5D6E5A00CD47A7 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1EC427FB1E65312F0069BEFD /* CircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		1EC427FD1E654A8F0069BEFD /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		1EEE00251E5BC4670090F9ED /* devlslopes-Social Media (Udemy).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "devlslopes-Social Media (Udemy).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EEE00281E5BC4670090F9ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EEE002A1E5BC4670090F9ED /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -55,6 +60,7 @@
 		1EEE003D1E5BC4680090F9ED /* devlslopes_Social_Media__Udemy_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = devlslopes_Social_Media__Udemy_Tests.swift; sourceTree = "<group>"; };
 		1EEE003F1E5BC4680090F9ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EEE00481E5BC5510090F9ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1EF29B191E62DFA9006DB93D /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		2665DB0A09F9C2EC7E96F835 /* Pods-devlslopes-Social Media (Udemy).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devlslopes-Social Media (Udemy).release.xcconfig"; path = "Pods/Target Support Files/Pods-devlslopes-Social Media (Udemy)/Pods-devlslopes-Social Media (Udemy).release.xcconfig"; sourceTree = "<group>"; };
 		40A95660360FB3BB1FEB13ED /* Pods-devlslopes-Social Media (Udemy)Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devlslopes-Social Media (Udemy)Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-devlslopes-Social Media (Udemy)Tests/Pods-devlslopes-Social Media (Udemy)Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		55B0916D03B925A45440F0C6 /* Pods-devlslopes-Social Media (Udemy).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devlslopes-Social Media (Udemy).debug.xcconfig"; path = "Pods/Target Support Files/Pods-devlslopes-Social Media (Udemy)/Pods-devlslopes-Social Media (Udemy).debug.xcconfig"; sourceTree = "<group>"; };
@@ -95,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				1E7423431E5D58B800CD47A7 /* Constants.swift */,
+				1E7423471E5D671200CD47A7 /* DropShadow-Protocol.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -127,7 +134,6 @@
 				1EEE004A1E5BC9700090F9ED /* Model */,
 				1EEE004C1E5BC97A0090F9ED /* Controller */,
 				1EEE004B1E5BC9760090F9ED /* View */,
-				1E7423471E5D671200CD47A7 /* DropShadow-Protocol.swift */,
 				1EEE00281E5BC4670090F9ED /* AppDelegate.swift */,
 				1EEE002C1E5BC4670090F9ED /* Main.storyboard */,
 				1EEE00481E5BC5510090F9ED /* GoogleService-Info.plist */,
@@ -160,6 +166,8 @@
 				1E7423401E5D57CD00CD47A7 /* FancyView.swift */,
 				1E7423491E5D6B5F00CD47A7 /* FancyTextField.swift */,
 				1E74234B1E5D6E1D00CD47A7 /* FuncyButton.swift */,
+				1EC427FB1E65312F0069BEFD /* CircleImageView.swift */,
+				1EC427FD1E654A8F0069BEFD /* PostCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -168,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				1EEE002A1E5BC4670090F9ED /* SignInVC.swift */,
+				1EF29B191E62DFA9006DB93D /* FeedVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -398,8 +407,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EC427FC1E65312F0069BEFD /* CircleImageView.swift in Sources */,
 				1E7423481E5D671200CD47A7 /* DropShadow-Protocol.swift in Sources */,
 				1E74234E1E5D6E5A00CD47A7 /* Extensions.swift in Sources */,
+				1EF29B1A1E62DFA9006DB93D /* FeedVC.swift in Sources */,
 				1EEE002B1E5BC4670090F9ED /* SignInVC.swift in Sources */,
 				1E7423461E5D636F00CD47A7 /* RoundButton.swift in Sources */,
 				1EEE00291E5BC4670090F9ED /* AppDelegate.swift in Sources */,
@@ -407,6 +418,7 @@
 				1E74234C1E5D6E1D00CD47A7 /* FuncyButton.swift in Sources */,
 				1E7423411E5D57CD00CD47A7 /* FancyView.swift in Sources */,
 				1E7423441E5D58B800CD47A7 /* Constants.swift in Sources */,
+				1EC427FE1E654A8F0069BEFD /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

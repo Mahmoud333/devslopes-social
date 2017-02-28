@@ -10,6 +10,10 @@ import UIKit
 import Firebase
 import FBSDKLoginKit
 
+import Fabric
+import TwitterCore
+import TwitterKit
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,7 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        let consumerKey = "diXlxnGNkxEqbvXu7SdB6fsmY" //from our app in apps.twitter
+        let consumerSecret = "qra0AfEKByEWElmumlbEmJe0jx6a2nF6olu1Gdcga2YXmA603g"
+        
+        Twitter.sharedInstance().start(withConsumerKey: consumerKey, consumerSecret: consumerSecret)
+        Fabric.with([Twitter.self])//telling fabric we are going to be using the twitter api
+        
         FIRApp.configure()
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)

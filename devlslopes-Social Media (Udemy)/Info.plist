@@ -41,27 +41,44 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>fb413373665691764</string>
-            </array>
-        </dict>
-    </array>
-    <key>FacebookAppID</key>
-    <string>413373665691764</string>
-    <key>FacebookDisplayName</key>
-    <string>Devslopes Social Media</string>
-    
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>fbapi</string>
-        <string>fb-messenger-api</string>
-        <string>fbauth2</string>
-        <string>fbshareextension</string>
-    </array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb413373665691764</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>413373665691764</string>
+	<key>FacebookDisplayName</key>
+	<string>Devslopes Social Media</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>diXlxnGNkxEqbvXu7SdB6fsmY</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>consumerKey</key>
+					<string>diXlxnGNkxEqbvXu7SdB6fsmY</string>
+					<key>consumerSecret</key>
+					<string>qra0AfEKByEWElmumlbEmJe0jx6a2nF6olu1Gdcga2YXmA603g</string>
+				</dict>
+				<key>KitName</key>
+				<string>Twitter</string>
+			</dict>
+		</array>
+	</dict>
 </dict>
 </plist>
