@@ -22,39 +22,34 @@ class SignInVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if let _ = KeychainWrapper.standard.string(forKey: C.KEY_UID){
+        if let existed_uid = KeychainWrapper.standard.string(forKey: C.KEY_UID){
             print("SMGL: ID found in the keychain ")
+            DataService.ds.createFirebaseDBUser(uid: existed_uid, userData: ["lastLogin": getDateAndTimeSMGL()])
             performSegue(withIdentifier: C.Segues.ToFeed.rawValue, sender: nil)
         }
     }
 
+    
     @IBAction func twitterBtnPressed(_ sender: Any) {
         print("SMGL: twitterBtnPressed")
 
         Twitter.sharedInstance().logIn(withMethods: [.webBased], completion: { (session, error) in
         
-            
-            
             print("SMGL: logInCompletion")
             if let error = error {
                 self.errorAlertSMGL(errorString: error.localizedDescription)
-            
             }
             
-            if session != nil {
+            if session != nil { //success
                 let authToken = session?.authToken
                 let authTokenSecret = session?.authTokenSecret
                 
                 print("SMGL: UserName \(session?.userName)")
 
-            
                 let credential = FIRTwitterAuthProvider.credential(withToken: authToken!, secret: authTokenSecret!)
-                
-                self.firebaseAuth(credential)
                 
                 let user = TWTRAPIClient.withCurrentUser()
                 let request = user.urlRequest(withMethod: "GET",
@@ -64,9 +59,13 @@ class SignInVC: UIViewController {
                 
                 user.sendTwitterRequest(request, completion: { (response, data, error) in
                     
-                    print("SMGL: Response :- \(response?.url)")
-                    print("SMGL: Data :- \(data)")
-                    print("SMGL: Error :- \(error)")
+                    print("SMGL: Response :-[ \(response?.url) ]...SMGL: Data :-[ \(data) ]... SMGL: Error :-[ \(error) ]")
+
+                    
+                    if error != nil {
+                        self.errorAlertSMGL(errorString: (error?.localizedDescription)!)
+                    }
+                    
                     
                     let json : Dictionary<String,Any>
                     
@@ -79,13 +78,27 @@ class SignInVC: UIViewController {
                         let lastName = json["screen_name"]
                         let email = json["email"]
                         
-                        print("SMGL: First name: ",firstName)
-                        print("SMGL: Last name: ",lastName)
-                        print("SMGL: Email: ",email)
+
+                        let userData = [
+                        "lastLogin": "\(self.getDateAndTimeSMGL())",
+                        "provider" : "\(credential.provider)",
+                        "twitter_profileImage": "\(json["profile_image_url"]!)",
+                        "twitter_name": "\(json["name"]!)",
+                        "twitter_email" : "\(json["email"]!)",
+                        "twitter_screen_name" : "\(json["screen_name"]!)",
+                        "twitter_description" : "\(json["description"]!)",
+                        "twitter_created_at" : "\(json["created_at"]!)",
+                        "twitter_profile_banner_url" : "\(json["profile_banner_url"]!)", //cover photo
+                        "twitter_followers_count" : "\(json["followers_count"]!)",
+                        "twitter_verified" : "\(json["verified"]!)",
+                        "twitter_location" : "\(json["location"]!)"
+                        ]
+                    
                         
+                        self.firebaseAuth(credential, userData: userData)
                         
-                    } catch {
-                        
+                    } catch let error as NSError {
+                        self.errorAlertSMGL(errorString: error.localizedDescription)
                     }
                 })
             }
@@ -109,7 +122,7 @@ class SignInVC: UIViewController {
                 //credentinal to access token based on facebook authentication
                 //basicaly you get the credentinal, and credentinal is whats used to authenticate with firebase
                 
-                self.firebaseAuth(credentinal)
+                self.firebaseAuth(credentinal, userData: nil)
             }
         }
         //"email" requesting permision just for the email request
@@ -117,29 +130,65 @@ class SignInVC: UIViewController {
     
     //this part of proccess is the same for twitter, facebook, google & github & contatins Firebase Part only
     //Sign in Firebase using facebook credentinal
-    func firebaseAuth(_ credential: FIRAuthCredential) {
+    func firebaseAuth(_ credential: FIRAuthCredential, userData: Dictionary<String,String>?) {
         
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
             
-            if error != nil { //there is error
+            if error != nil { //error
                 
                 print("SMGL: Unable to authenticate with Firebase:- \(error?.localizedDescription) ")
                 self.errorAlertSMGL(errorString: (error?.localizedDescription)!)
                 
-            } else {
+            } else { //Success
                 print("SMGL: Successfully authenticated with Firebase ") ; print("SMGl: credential:- \(credential) ")
                 
                 if let uid = user?.uid {
-                    self.completeSignIn(uid: uid)
+                    if userData == nil {
+                        let userData2 = ["provider" : "\(credential.provider)",
+                            "lastLogin": "\(self.getDateAndTimeSMGL())",
+                            "createdFirebase": "\(self.getDateAndTimeSMGL())",
+                            "facebook_Email": "\(user!.email!)",
+                            "facebook_Name": "\(user!.displayName!)",
+                            "facebook_PhotoURL": "\(user!.photoURL)!" ] as Dictionary<String,String>
+                        self.completeSignIn(uid: uid, userData: userData2)
+                    } else {
+                        self.completeSignIn(uid: uid, userData: userData!)
+                    }
                 }
             }
         })
     }
-    //two steps to authenticate in, with the provider then with firebase
+    //2 steps to authenticate in, with the provider then with firebase
     //1 tell facebook i allow to give my info to this app,2 checking if everything is ok then go ahead
     
     
-    
+    @IBAction func signUpBtnPressed(_ sender: Any) {
+        if let email = emailTxtField.text, let password = passTxtField.text { //they r not nil
+            
+            FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
+                
+                if error != nil {
+                    print("SMGL: Something Went completley wrong with authenticating with Firebase using email :- \(error?.localizedDescription) ")
+                    self.errorAlertSMGL(errorString: (error!.localizedDescription))
+                    
+                } else { //we where able to create the user
+                    print("SMGL: Successfully authenticated with Firebase [created the account] ")
+                    if let uid = user?.uid {
+                        let userData = ["Provider": "\(user!.providerID)",
+                            "lastLogin": self.getDateAndTimeSMGL(),
+                            "Email": "\(user!.email!)",
+                            "createdFirebase": "\(self.getDateAndTimeSMGL())",
+                        ]
+                        self.completeSignIn(uid: uid,userData: userData)
+                    }
+                }
+            })
+        } else {
+            print("SMGL: either email or password are nil ")
+            errorAlertSMGL(errorString: "SMGL: either email or password are nil ")
+        }
+    }
+
     @IBAction func signinBtnPressed(_ sender: Any) {
         if let email = emailTxtField.text, let password = passTxtField.text { //they r not nil
             
@@ -147,9 +196,11 @@ class SignInVC: UIViewController {
                 
                 if error == nil { //No errors Proceed, user existed & signed in
                     print("SMGL: Email User authenticated with Firebase [Signed In] ")
-                
-                    if let uid = user?.uid {
-                        self.completeSignIn(uid: uid)
+                    
+                    if let uid = user?.uid { //leave last login
+                        
+                        let userData = ["lastLogin": self.getDateAndTimeSMGL()]
+                        self.completeSignIn(uid: uid, userData: userData)
                     }
                     
                 } else { //there is error //check firebase docmentation //user doesn't exist
@@ -163,37 +214,15 @@ class SignInVC: UIViewController {
             errorAlertSMGL(errorString: "SMGL: either email or password are nil ")
         }
     }
+
     
-    @IBAction func signUpBtnPressed(_ sender: Any) {
-        if let email = emailTxtField.text, let password = passTxtField.text { //they r not nil
-            
-            FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
-                
-                if error != nil {
-                    print("SMGL: Unable to authenticate with Firebase using email ")
-                    print("SMGL: Something Went completley wrong:- \(error?.localizedDescription) ")
-                    
-                    self.errorAlertSMGL(errorString: (error!.localizedDescription))
-                    
-                } else { //we where able to create the user
-                    print("SMGL: Successfully authenticated with Firebase [created the account] ")
-                    if let uid = user?.uid {
-                        self.completeSignIn(uid: uid)
-                    }
-                }
-            })
-        } else {
-            print("SMGL: either email or password are nil ")
-            errorAlertSMGL(errorString: "SMGL: either email or password are nil ")
-        }
-    }
-
-
     //save uid & perform segue
-    func completeSignIn(uid: String){
-        KeychainWrapper.standard.set(uid, forKey: C.KEY_UID)
+    func completeSignIn(uid: String, userData: Dictionary<String, String>){
+        DataService.ds.createFirebaseDBUser(uid: uid, userData: userData) //our ds class
+        KeychainWrapper.standard.set(uid, forKey: C.KEY_UID) //pod
+        print("SMGL: data saved to keychain")
+        
         performSegue(withIdentifier: C.Segues.ToFeed.rawValue, sender: nil)
-
     }
 }
 

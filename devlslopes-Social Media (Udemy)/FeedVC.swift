@@ -28,11 +28,8 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBAction func signOutPressed(_ sender: Any) {
         do {
             KeychainWrapper.standard.removeObject(forKey: C.KEY_UID)
-
             try FIRAuth.auth()?.signOut()
-            
             dismiss(animated: true, completion: nil)
-
         }catch let error as NSError {
             errorAlertSMGL(errorString: error.localizedDescription)
         }
@@ -44,16 +41,14 @@ extension FeedVC {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: C.Cell_Ident, for: indexPath) as? PostCell {
-            
             return cell
         }
-        
         return UITableViewCell()
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 10
     }
 }

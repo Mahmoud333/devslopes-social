@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E67B1431E68398500C2B238 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E67B1421E68398500C2B238 /* DataService.swift */; };
 		1E7423411E5D57CD00CD47A7 /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7423401E5D57CD00CD47A7 /* FancyView.swift */; };
 		1E7423441E5D58B800CD47A7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7423431E5D58B800CD47A7 /* Constants.swift */; };
 		1E7423461E5D636F00CD47A7 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7423451E5D636F00CD47A7 /* RoundButton.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		021995CA48D133555CA4A37D /* Pods_devlslopes_Social_Media__Udemy_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_devlslopes_Social_Media__Udemy_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E67B1421E68398500C2B238 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		1E7423401E5D57CD00CD47A7 /* FancyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
 		1E7423431E5D58B800CD47A7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1E7423451E5D636F00CD47A7 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
@@ -97,6 +99,14 @@
 			name = "Things not using";
 			sourceTree = "<group>";
 		};
+		1E67B1411E68395C00C2B238 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1E67B1421E68398500C2B238 /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		1E7423421E5D589300CD47A7 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +139,7 @@
 		1EEE00271E5BC4670090F9ED /* devlslopes-Social Media (Udemy) */ = {
 			isa = PBXGroup;
 			children = (
+				1E67B1411E68395C00C2B238 /* Services */,
 				1E53AE831E5EBCD7003E70BB /* Things not using */,
 				1E7423421E5D589300CD47A7 /* Util */,
 				1EEE004A1E5BC9700090F9ED /* Model */,
@@ -408,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EC427FC1E65312F0069BEFD /* CircleImageView.swift in Sources */,
+				1E67B1431E68398500C2B238 /* DataService.swift in Sources */,
 				1E7423481E5D671200CD47A7 /* DropShadow-Protocol.swift in Sources */,
 				1E74234E1E5D6E5A00CD47A7 /* Extensions.swift in Sources */,
 				1EF29B1A1E62DFA9006DB93D /* FeedVC.swift in Sources */,
