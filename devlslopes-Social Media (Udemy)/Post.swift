@@ -16,11 +16,13 @@ class Post {
     private var _likes: Int!
     private var _postKey: String! //post id
     
+    private var _createdIn: String!
     
-    init(caption: String,imageURL: String,likes: Int){
+    init(caption: String,imageURL: String,likes: Int, createdIn: String){
         self._caption = caption
         self._imageURL = imageURL
         self._likes = likes
+        self._createdIn = createdIn
     }
     
     init(postKey: String, postData: Dictionary<String, Any>) {
@@ -38,6 +40,10 @@ class Post {
         
         if let likes = postData["numberOfLikes"] as? Int {
             self._likes = likes
+        }
+        
+        if let createdIn = postData["createdIn"] as? String {
+            self._createdIn = createdIn
         }
     }
     
@@ -67,6 +73,13 @@ class Post {
             return ""
         }
         return _postKey
+    }
+    
+    var createdIn: String {
+        if _createdIn == nil {
+            return ""
+        }
+        return _createdIn
     }
 
 }

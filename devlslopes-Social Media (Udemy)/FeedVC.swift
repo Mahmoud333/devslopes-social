@@ -63,21 +63,9 @@ extension FeedVC {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: C.Cell_Ident, for: indexPath) as? PostCell {
             
-            cell.likesLbl.text = "\(postss[indexPath.row].likes)"
-            cell.caption.text = postss[indexPath.row].caption
+            let postData = postss[indexPath.row]
+            cell.configuerCell(postData: postData )
             
-            do {
-                let url: URL = URL(string: self.postss[indexPath.row].imageURL)!
-                    print("SMGL \(url)")
-                let imageData: Data = try Data(contentsOf: url)
-                    print("SMGL \(imageData)")
-                    
-                    cell.postImage.image = UIImage(data: imageData)
-                
-
-            } catch let error as NSError {
-               print("SMGL: \(error.localizedDescription)")
-            }
             return cell
         }
         return UITableViewCell()
