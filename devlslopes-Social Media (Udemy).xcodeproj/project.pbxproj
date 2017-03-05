@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E28C5321E6B0DF5004E4BA6 /* Extn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E28C5311E6B0DF5004E4BA6 /* Extn.swift */; };
+		1E3E928A1E6BEF19008B28C4 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3E92891E6BEF18008B28C4 /* Post.swift */; };
 		1E67B1431E68398500C2B238 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E67B1421E68398500C2B238 /* DataService.swift */; };
 		1E7423411E5D57CD00CD47A7 /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7423401E5D57CD00CD47A7 /* FancyView.swift */; };
 		1E7423441E5D58B800CD47A7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7423431E5D58B800CD47A7 /* Constants.swift */; };
@@ -41,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		021995CA48D133555CA4A37D /* Pods_devlslopes_Social_Media__Udemy_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_devlslopes_Social_Media__Udemy_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E28C5311E6B0DF5004E4BA6 /* Extn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extn.swift; sourceTree = "<group>"; };
+		1E3E92891E6BEF18008B28C4 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		1E67B1421E68398500C2B238 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		1E7423401E5D57CD00CD47A7 /* FancyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
 		1E7423431E5D58B800CD47A7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 			children = (
 				1E7423431E5D58B800CD47A7 /* Constants.swift */,
 				1E7423471E5D671200CD47A7 /* DropShadow-Protocol.swift */,
+				1E28C5311E6B0DF5004E4BA6 /* Extn.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 		1EEE004A1E5BC9700090F9ED /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1E3E92891E6BEF18008B28C4 /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -422,10 +428,12 @@
 				1E67B1431E68398500C2B238 /* DataService.swift in Sources */,
 				1E7423481E5D671200CD47A7 /* DropShadow-Protocol.swift in Sources */,
 				1E74234E1E5D6E5A00CD47A7 /* Extensions.swift in Sources */,
+				1E28C5321E6B0DF5004E4BA6 /* Extn.swift in Sources */,
 				1EF29B1A1E62DFA9006DB93D /* FeedVC.swift in Sources */,
 				1EEE002B1E5BC4670090F9ED /* SignInVC.swift in Sources */,
 				1E7423461E5D636F00CD47A7 /* RoundButton.swift in Sources */,
 				1EEE00291E5BC4670090F9ED /* AppDelegate.swift in Sources */,
+				1E3E928A1E6BEF19008B28C4 /* Post.swift in Sources */,
 				1E74234A1E5D6B5F00CD47A7 /* FancyTextField.swift in Sources */,
 				1E74234C1E5D6E1D00CD47A7 /* FuncyButton.swift in Sources */,
 				1E7423411E5D57CD00CD47A7 /* FancyView.swift in Sources */,

@@ -80,18 +80,18 @@ class SignInVC: UIViewController {
                         
 
                         let userData = [
-                        "lastLogin": "\(self.getDateAndTimeSMGL())",
-                        "provider" : "\(credential.provider)",
-                        "twitter_profileImage": "\(json["profile_image_url"]!)",
-                        "twitter_name": "\(json["name"]!)",
-                        "twitter_email" : "\(json["email"]!)",
-                        "twitter_screen_name" : "\(json["screen_name"]!)",
-                        "twitter_description" : "\(json["description"]!)",
-                        "twitter_created_at" : "\(json["created_at"]!)",
-                        "twitter_profile_banner_url" : "\(json["profile_banner_url"]!)", //cover photo
-                        "twitter_followers_count" : "\(json["followers_count"]!)",
-                        "twitter_verified" : "\(json["verified"]!)",
-                        "twitter_location" : "\(json["location"]!)"
+                            "lastLogin": "\(self.getDateAndTimeSMGL())",
+                            "provider" : "\(credential.provider)",
+                            "twitter_profileImage": "\(json["profile_image_url"]!)",
+                            "twitter_name": "\(json["name"]!)",
+                            "twitter_email" : "\(json["email"]!)",
+                            "twitter_screen_name" : "\(json["screen_name"]!)",
+                            "twitter_description" : "\(json["description"]!)",
+                            "twitter_created_at" : "\(json["created_at"]!)",
+                            "twitter_profile_banner_url" : "\(json["profile_banner_url"]!)",
+                            "twitter_followers_count" : "\(json["followers_count"]!)",
+                            "twitter_verified" : "\(json["verified"]!)",
+                            "twitter_location" : "\(json["location"]!)"
                         ]
                     
                         
@@ -109,7 +109,7 @@ class SignInVC: UIViewController {
         
         let facebookLogin = FBSDKLoginManager()
         
-        facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
+        facebookLogin.logIn(withReadPermissions: [ "email" ], from: self) { (result, error) in
             
             if error != nil {   //something gone wrong
                 print("SMGL: Unable to authenticate with Facebook:- \(error?.localizedDescription) ")
@@ -118,9 +118,27 @@ class SignInVC: UIViewController {
             } else {
                 print("SMGL: Successfully authenticated with Facebook ")
                 
+                print("SMGL: result?.declinedPermissions: [\(result?.declinedPermissions as? String)]")
+
+                
                 let credentinal = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 //credentinal to access token based on facebook authentication
                 //basicaly you get the credentinal, and credentinal is whats used to authenticate with firebase
+                
+                
+                
+                //get alot of userData
+                //
+                var fbRequest = FBSDKGraphRequest(graphPath:"me", parameters: nil)
+                fbRequest?.start(completionHandler: { (connection, result, error) in
+                    if error == nil {
+                        print("User Info : \(result)")
+                    } else {
+                        print("Error Getting Info \(error)");
+                    }
+                })
+
+                
                 
                 self.firebaseAuth(credentinal, userData: nil)
             }
@@ -141,6 +159,7 @@ class SignInVC: UIViewController {
                 
             } else { //Success
                 print("SMGL: Successfully authenticated with Firebase ") ; print("SMGl: credential:- \(credential) ")
+                
                 
                 if let uid = user?.uid {
                     if userData == nil {

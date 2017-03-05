@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "devlslopes-Social Media (Udemy)/SignInVC.swift"
-            timestampString = "510164600.551316"
+            timestampString = "510386772.153662"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "signUpBtnPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "devlslopes-Social Media (Udemy)/SignInVC.swift"
-            timestampString = "510164600.551316"
+            timestampString = "510386772.153662"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "firebaseAuth(_:userData:)"
             landmarkType = "7">
          </BreakpointContent>
