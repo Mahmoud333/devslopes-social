@@ -10,16 +10,34 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    //UINavigationControllerDelegate uses it to display imagepicker and dismiss it as well
+    
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addImage: CircleImageView!
+    
+    
+    
+    @IBOutlet weak var writeView: UIView!
+    var writeScreenVisible = false
     
     var postss = [Post]()
+    var imagePicker : UIImagePickerController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        
+        writeView.frame = CGRect(x: 0, y: -200, width: UIScreen.main.bounds.width - 10, height: 180)
+        writeView.center.x = self.view.center.x
+        self.view.addSubview(writeView)
+        
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true //mke it can crop it
+        imagePicker.delegate = self
+        
         
         //observe our posts by url of our posts database
         
@@ -46,6 +64,11 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         super.didReceiveMemoryWarning()
     }
 
+    
+    @IBAction func addImageTapped(_ sender: Any) {
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
     @IBAction func signOutPressed(_ sender: Any) {
         do {
             KeychainWrapper.standard.removeObject(forKey: C.KEY_UID)
@@ -55,6 +78,35 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             errorAlertSMGL(errorString: error.localizedDescription)
         }
     }
+
+    @IBAction func writePressed(_ sender: Any) {
+        if writeScreenVisible == false {
+           UIView.animate(withDuration: 0.5) {
+                self.writeView.transform = CGAffineTransform(translationX: 0, y: 270)
+                self.writeScreenVisible = true
+            }
+            
+        } else {
+            UIView.animate(withDuration: 0.5) {
+                self.writeView.transform = CGAffineTransform(translationX: 0, y: -200)
+                self.writeScreenVisible = false
+            }
+        }
+    }
+
+}
+
+extension FeedVC {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) { //can be video or image
+        
+        if let choosenImage = info[UIImagePickerControllerEditedImage] as? UIImage { //array have original, edited & other info
+            
+            addImage.image = choosenImage
+        } else {
+            print("SMGL: a valid image wasn't selected INFO:- \(info)") ; errorAlertSMGL(errorString: "a valid image wasn't selected")
+        }
+        imagePicker.dismiss(animated: true, completion: nil)
+    } //when we select the image dismiss the image picker
 }
 
 //TableView

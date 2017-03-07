@@ -16,9 +16,11 @@ class CircleImageView: UIImageView, DropShadow {
             if CompletleyCircleIt {
                 layer.cornerRadius = self.bounds.width/2
                 //layer.masksToBounds = true
+                clipsToBounds = true
             } else {
                 layer.cornerRadius = 0.0
                 //layer.masksToBounds = false
+                clipsToBounds = true
             }
         }
     }

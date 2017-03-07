@@ -247,12 +247,21 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmD-up-UM4">
+                                        <rect key="frame" x="324" y="30" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="writePressed:" destination="soh-0y-oKs" eventType="touchUpInside" id="5KS-T2-G0e"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="E0u-AS-HRK"/>
+                                    <constraint firstAttribute="bottom" secondItem="mmD-up-UM4" secondAttribute="bottom" constant="5" id="GMe-dv-Y80"/>
                                     <constraint firstItem="9C1-RE-Ayi" firstAttribute="top" secondItem="EvC-1H-qrk" secondAttribute="top" constant="21" id="ODp-mX-tt3"/>
                                     <constraint firstItem="2zr-wk-UfA" firstAttribute="centerY" secondItem="9C1-RE-Ayi" secondAttribute="centerY" id="ZnV-V3-y39"/>
+                                    <constraint firstAttribute="trailing" secondItem="mmD-up-UM4" secondAttribute="trailing" constant="5" id="bmT-uK-niB"/>
                                     <constraint firstItem="9C1-RE-Ayi" firstAttribute="leading" secondItem="EvC-1H-qrk" secondAttribute="leading" constant="12" id="p55-pi-UGT"/>
                                     <constraint firstItem="2zr-wk-UfA" firstAttribute="centerX" secondItem="EvC-1H-qrk" secondAttribute="centerX" id="r0s-b5-ssT"/>
                                 </constraints>
@@ -266,9 +275,10 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Ru-o9-YXn">
                                         <rect key="frame" x="2" y="2" width="339" height="61"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="N9n-Wt-8tc" customClass="CircleImageView" customModule="devlslopes_Social_Media__Udemy_" customModuleProvider="target">
+                                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="N9n-Wt-8tc" customClass="CircleImageView" customModule="devlslopes_Social_Media__Udemy_" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.5" width="60" height="60"/>
                                                 <color key="backgroundColor" red="0.0" green="0.59215686274509804" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="G5I-z1-nWB"/>
                                                     <constraint firstAttribute="height" constant="60" id="bNP-9f-EYq"/>
@@ -277,6 +287,9 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="CompletleyCircleIt" value="YES"/>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addShadow" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="Xgr-Lk-bzV" appends="YES" id="Luq-ti-Fuq"/>
+                                                </connections>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add a caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bfi-L5-aNe" customClass="FancyTextField" customModule="devlslopes_Social_Media__Udemy_" customModuleProvider="target">
                                                 <rect key="frame" x="68" y="0.5" width="203" height="60"/>
@@ -491,13 +504,104 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addImage" destination="N9n-Wt-8tc" id="w7l-Hx-hG5"/>
                         <outlet property="tableView" destination="yDY-c0-WUc" id="LmF-IA-OHw"/>
+                        <outlet property="writeView" destination="FUY-bF-yIZ" id="mYj-OW-HXX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KUc-dz-bOd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="6Y7-fv-CHP">
                     <connections>
                         <action selector="signOutPressed:" destination="soh-0y-oKs" id="UhB-XO-IFQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <view contentMode="scaleToFill" id="FUY-bF-yIZ" customClass="FancyView" customModule="devlslopes_Social_Media__Udemy_" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="376" height="170"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bjn-F8-Ct4">
+                            <rect key="frame" x="4" y="4" width="368" height="92"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="92" id="Iq0-4h-AmQ"/>
+                            </constraints>
+                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="b7x-Sa-kmF">
+                            <rect key="frame" x="10.5" y="104" width="356" height="60"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="ig2-bz-Qih" customClass="CircleImageView" customModule="devlslopes_Social_Media__Udemy_" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                    <color key="backgroundColor" red="0.0" green="0.59215686270000001" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    <gestureRecognizers/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="Pm1-LE-0hf"/>
+                                        <constraint firstAttribute="height" constant="60" id="Svc-h8-uWk"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="CompletleyCircleIt" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="addShadow" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </imageView>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="a6X-Lx-TqA">
+                                    <rect key="frame" x="66" y="0.0" width="224" height="60"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ux2-fz-Ava">
+                                            <rect key="frame" x="0.0" y="0.0" width="72" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="72" id="FY3-kW-Hlk"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aLd-Ie-xay">
+                                            <rect key="frame" x="76" y="0.0" width="72" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="72" id="Pr8-fK-hhy"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="34r-qm-iTT">
+                                            <rect key="frame" x="152" y="0.0" width="72" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="72" id="iwk-VM-4XB"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lB-af-dNO" customClass="FuncyButton" customModule="devlslopes_Social_Media__Udemy_" customModuleProvider="target">
+                                    <rect key="frame" x="296" y="0.0" width="60" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.43137254899999999" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="4Z4-A3-trP"/>
+                                        <constraint firstAttribute="width" constant="60" id="Uo4-Uy-pjY"/>
+                                    </constraints>
+                                    <state key="normal" image="add-post"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="CompletleyCircleIt" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="addShadow" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.92549019607843142" green="0.93725490196078431" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="bjn-F8-Ct4" secondAttribute="trailing" constant="4" id="Ics-DM-GPv"/>
+                        <constraint firstItem="bjn-F8-Ct4" firstAttribute="leading" secondItem="FUY-bF-yIZ" secondAttribute="leading" constant="4" id="XbU-Nj-JnN"/>
+                        <constraint firstItem="b7x-Sa-kmF" firstAttribute="centerX" secondItem="FUY-bF-yIZ" secondAttribute="centerX" id="duw-qX-Kev"/>
+                        <constraint firstAttribute="bottom" secondItem="b7x-Sa-kmF" secondAttribute="bottom" constant="6" id="gHj-kF-oiP"/>
+                        <constraint firstItem="bjn-F8-Ct4" firstAttribute="top" secondItem="FUY-bF-yIZ" secondAttribute="top" constant="4" id="o0f-uD-kA0"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                            <real key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="addShadow" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <tapGestureRecognizer id="Xgr-Lk-bzV">
+                    <connections>
+                        <action selector="addImageTapped:" destination="soh-0y-oKs" id="Fbs-nV-4vZ"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
