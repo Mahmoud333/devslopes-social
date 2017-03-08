@@ -48,37 +48,29 @@ class Post {
     }
     
     var caption: String {
-        if _caption == nil {
-            return ""
-        }
+        if _caption == nil { return "" }
         return _caption
     }
     
     var imageURL: String {
         if _imageURL == nil {
-           return ""
+           return "gs://devslopes-social-media.appspot.com/post-pics/a103eb2dc0ebe70231161f9cb71d308b.png"
         }
         return _imageURL
     }
     
     var likes: Int {
-        if _likes == nil {
-            return 0
-        }
+        if _likes == nil { return 0 }
         return _likes
     }
     
     var postKey: String {
-        if _postKey == nil {
-            return ""
-        }
+        if _postKey == nil { return "" }
         return _postKey
     }
     
     var createdIn: String {
-        if _createdIn == nil {
-            return ""
-        }
+        if _createdIn == nil { return "" }
         return _createdIn
     }
 

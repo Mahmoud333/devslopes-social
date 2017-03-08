@@ -16,11 +16,12 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addImage: CircleImageView!
-    
+    @IBOutlet weak var captionTextField: FancyTextField!
     
     
     @IBOutlet weak var writeView: UIView!
     var writeScreenVisible = false
+    static var imageCache: NSCache<NSString, UIImage> = NSCache()//static bec. we gonna use it in multiple location Dict String key get image value
     
     var postss = [Post]()
     var imagePicker : UIImagePickerController!
@@ -38,6 +39,8 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
         imagePicker.allowsEditing = true //mke it can crop it
         imagePicker.delegate = self
         
+        print("SMGL: DB \(DB_BASE)")
+        print("SMGL: Storage \(STORAGE_BASE)")
         
         //observe our posts by url of our posts database
         
@@ -67,6 +70,14 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
     
     @IBAction func addImageTapped(_ sender: Any) {
         present(imagePicker, animated: true, completion: nil)
+    }
+    @IBAction func postTapped(_ sender: Any) {
+        
+        let imageData: Data = UIImageJPEGRepresentation(addImage.image!, 0)!
+        let postData = ["caption": "\(captionTextField.text)",
+                        "imageData": String(describing: imageData)
+                            ] as? Dictionary<String, String>
+        DataService.ds.createAPost(uid: "123456789", postData: postData!)
     }
     
     @IBAction func signOutPressed(_ sender: Any) {
@@ -114,9 +125,18 @@ extension FeedVC {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: C.Cell_Ident, for: indexPath) as? PostCell {
-            
             let postData = postss[indexPath.row]
-            cell.configuerCell(postData: postData )
+            
+            let imgUrl = postData.imageURL
+                
+            if let img = FeedVC.imageCache.object(forKey: imgUrl as NSString) { //found it
+                
+                cell.configuerCell(postData: postData, img: img)
+                
+            } else {                                                            //didnt found, download it
+                
+                cell.configuerCell(postData: postData, img: nil)
+            }
             
             return cell
         }

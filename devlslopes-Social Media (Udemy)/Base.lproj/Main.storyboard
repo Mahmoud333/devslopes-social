@@ -312,6 +312,9 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="CompletleyCircleIt" value="YES"/>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="addShadow" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="postTapped:" destination="soh-0y-oKs" eventType="touchUpInside" id="D2J-SA-0lX"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -505,6 +508,7 @@
                     </view>
                     <connections>
                         <outlet property="addImage" destination="N9n-Wt-8tc" id="w7l-Hx-hG5"/>
+                        <outlet property="captionTextField" destination="bfi-L5-aNe" id="1Am-MD-8GP"/>
                         <outlet property="tableView" destination="yDY-c0-WUc" id="LmF-IA-OHw"/>
                         <outlet property="writeView" destination="FUY-bF-yIZ" id="mYj-OW-HXX"/>
                     </connections>
