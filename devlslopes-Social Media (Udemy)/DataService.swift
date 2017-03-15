@@ -11,6 +11,7 @@
 
 import Foundation
 import Firebase
+import SwiftKeychainWrapper
 
 let DB_BASE = FIRDatabase.database().reference()
 //which is the url of our root database but from google.plist "https://devslopes-social-media.firebaseio.com/ "
@@ -22,7 +23,6 @@ class DataService {
     static let ds = DataService()
     
     //Private Common end points
-    
     //DB refrences
     private var _REF_BASE = DB_BASE     //reference base
     private var _REF_POSTS = DB_BASE.child("Test").child("Posts") //.child means "/"
@@ -45,6 +45,20 @@ class DataService {
         return _REF_POST_IMAGES
     }
     
+    var REF_USER_CURRENT: FIRDatabaseReference { //get current user from keychain, matches uid
+        let uid = KeychainWrapper.standard.string(forKey: C.KEY_UID)
+        let user = REF_USERS.child(uid!)
+        return user
+    }
+    
+    
+    
+    
+    
+    
+    
+    //Funcs
+    
     //create user in data base func code, DBUser refer to DataBase
     func createFirebaseDBUser(uid: String, userData: Dictionary<String, String>){
         
@@ -56,6 +70,27 @@ class DataService {
     
     func createAPost(uid: String, postData: Dictionary<String,String>) {
         
-        REF_POSTS.child(uid).updateChildValues(postData)
+        REF_POSTS.child(uid).setValue(postData)
+        
+        //other way of "updateChildValues" it removes anything with same id then put ours which we need
+        //in our case so we dont merge posts with each others
+    }
+    
+    
+    func startGettingPosts() -> [FIRDataSnapshot] {
+        //empty initialized 1
+        var snapshots = [FIRDataSnapshot]()
+        
+        DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
+            print("SMGL: \(snapshot.value)")
+            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] { //snapshot is many
+                //array of all of our posts
+
+                //make it equal to
+                snapshots = snapshot
+            }
+        })
+        //return it empty or full
+        return snapshots
     }
 }

@@ -8,8 +8,15 @@
 
 import UIKit
 
+@IBDesignable
 class FancyTextView: UITextView {
 
+    @IBInspectable var CornerRadius: CGFloat = 0.0 {
+        didSet {
+            layer.cornerRadius = CornerRadius
+        }
+    }
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -17,5 +24,4 @@ class FancyTextView: UITextView {
         // Drawing code
     }
     */
-
 }

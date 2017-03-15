@@ -25,6 +25,12 @@ class FancyView: UIView ,DropShadow{
         }
     }
     
+    @IBInspectable var zPosition: CGFloat = 0.0 {
+        didSet {
+            layer.zPosition = zPosition
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

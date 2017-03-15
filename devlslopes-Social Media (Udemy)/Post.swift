@@ -74,4 +74,26 @@ class Post {
         return _createdIn
     }
 
+    func addLike(){
+        _likes = _likes + 1
+        //update the number of likes of that post
+        DataService.ds.REF_POSTS.child(postKey).child("numberOfLikes").setValue(_likes)
+    }
+    func removeLike(){
+        _likes = _likes - 1
+        //update the number of likes of that post
+        DataService.ds.REF_POSTS.child(postKey).child("numberOfLikes").setValue(_likes)
+    }
+    
+    func adjustLikes(addLike: Bool){
+        if addLike {
+            _likes = _likes + 1
+            
+        } else {    //remove like
+            _likes = _likes - 1
+            
+        }
+        //update the number of likes of that post
+        DataService.ds.REF_POSTS.child(postKey).child("numberOfLikes").setValue(_likes)
+    }
 }

@@ -18,7 +18,6 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
     @IBOutlet weak var addImage: CircleImageView!
     @IBOutlet weak var captionTextField: FancyTextField!
     
-    
     @IBOutlet weak var writeView: UIView!
     var writeScreenVisible = false
     static var imageCache: NSCache<NSString, UIImage> = NSCache()//static bec. we gonna use it in multiple location Dict String key get image value
@@ -26,12 +25,14 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
     var postss = [Post]()
     var imagePicker : UIImagePickerController!
     
+    var selectedImage = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         
-        writeView.frame = CGRect(x: 0, y: -200, width: UIScreen.main.bounds.width - 10, height: 180)
+        writeView.frame = CGRect(x: 0, y: -130, width: UIScreen.main.bounds.width - 10, height: 170)
         writeView.center.x = self.view.center.x
         self.view.addSubview(writeView)
         
@@ -73,11 +74,83 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
     }
     @IBAction func postTapped(_ sender: Any) {
         
+        guard let caption = captionTextField.text, caption != "" else {
+            print("SMGL: caption is empty write something") //maybe highlight the view make popup
+            return //or break
+        }
+        
+        guard let img = addImage.image, selectedImage == true else {
+            print("SMGL: An image must be selected")
+            return
+        }
+        
+        //convert to data JPEG and compress it
+        if let imgData = UIImageJPEGRepresentation(img, 0.2) { //1.0 best quality, 0.2 still look good
+            
+            //create random string for image name
+            let imgUid = NSUUID().uuidString
+            
+            //to tell firebase storage its jpeg we passing in, FB can infer what it is but sometimes he get it wrong
+            let metadata = FIRStorageMetadata()
+            metadata.contentType = "image/jpeg"
+            
+            //upload it
+            DataService.ds.REF_POST_IMAGES.child(imgUid).put(imgData, metadata: metadata) { (metadata, error) in
+                
+                if error != nil {
+                    
+                    print("SMGL: something wrong with uploading the image to firebase storage")
+                    self.errorAlertSMGL(errorString: "something wrong with uploading the image to firebase storage")
+                
+                } else {
+                    
+                    print("SMGL: Successfully uploaded image to Firebase storage")
+                    self.errorAlertSMGL(errorString: "Successfully Uploaded Image")
+                    
+                    let downloadURL = metadata?.downloadURL()?.absoluteString //get 100% good String for the url we can download it from
+                    print("SMGL: absoluteString URL \(downloadURL)")
+                    
+                    if let url = downloadURL {
+                        self.postToFirebase(imgUrl: url)
+                    }
+                    /* Real Me
+                    let postData: Dictionary<String, String> = ["caption": caption,
+                                                                "imageURL": downloadURL!,
+                                                                "createdIn": self.getDateAndTimeSMGL(),
+                                                                "numberOfLikes": "0"
+                    ]
+                    DataService.ds.createAPost(uid: imgUid, postData: postData)
+                    */
+                }
+            }
+        }
+        /*
         let imageData: Data = UIImageJPEGRepresentation(addImage.image!, 0)!
         let postData = ["caption": "\(captionTextField.text)",
-                        "imageData": String(describing: imageData)
+                        "imageData": String(describing: imageData),
+                        "createdIn": getDateAndTimeSMGL(),
+                        "numberOfLikes": "0"
                             ] as? Dictionary<String, String>
         DataService.ds.createAPost(uid: "123456789", postData: postData!)
+ */
+    }
+    
+    func postToFirebase(imgUrl: String){
+        let postData: Dictionary<String, Any> = ["caption": captionTextField.text!,
+                                                    "imageURL": imgUrl,
+                                                    "createdIn": self.getDateAndTimeSMGL(),
+                                                    "numberOfLikes": 1
+        ]
+        
+        //childByAutoId() firebase create id for post on fly (random)
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        firebasePost.setValue(postData) //is other way of "updateChildValues" it removes anything with same id then put ours
+        
+        captionTextField.text = ""
+        selectedImage = false
+        addImage.image = UIImage(named: "add-image")
+        tableView.reloadData()
+        
     }
     
     @IBAction func signOutPressed(_ sender: Any) {
@@ -92,16 +165,18 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
 
     @IBAction func writePressed(_ sender: Any) {
         if writeScreenVisible == false {
+            writeView.isHidden = false
            UIView.animate(withDuration: 0.5) {
-                self.writeView.transform = CGAffineTransform(translationX: 0, y: 270)
+                self.writeView.transform = CGAffineTransform(translationX: 0, y: 200)
                 self.writeScreenVisible = true
             }
-            
         } else {
-            UIView.animate(withDuration: 0.5) {
-                self.writeView.transform = CGAffineTransform(translationX: 0, y: -200)
+            UIView.animate(withDuration: 0.5, animations: {
+                self.writeView.transform = CGAffineTransform(translationX: 0, y: -130)
                 self.writeScreenVisible = false
-            }
+            }, completion: { (Bool) in
+                 self.writeView.isHidden = true
+            })
         }
     }
 
@@ -113,6 +188,7 @@ extension FeedVC {
         if let choosenImage = info[UIImagePickerControllerEditedImage] as? UIImage { //array have original, edited & other info
             
             addImage.image = choosenImage
+            selectedImage = true
         } else {
             print("SMGL: a valid image wasn't selected INFO:- \(info)") ; errorAlertSMGL(errorString: "a valid image wasn't selected")
         }
